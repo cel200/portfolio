@@ -26,6 +26,55 @@
   transition: background-color 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease;
   gap: 350px;
 }
+/* Drawer background overlay */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 999;
+}
+
+/* When drawer is open */
+.mobile-drawer.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Drawer panel */
+.drawer-content {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 70%;
+  height: 100%;
+  background: white;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transform: translateX(-100%);
+  transition: 0.3s ease;
+}
+
+/* Slide-in animation */
+.mobile-drawer.open .drawer-content {
+  transform: translateX(0);
+}
+
+/* Drawer links */
+.drawer-content a {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+}
 
 /* When scrolled */
 .navbar-scrolled {
@@ -68,6 +117,7 @@
     font-size: 1.3rem;
     font-family: Inter;
     font-weight: 600;
+    color: black;
 }
 .user-style1{
     display: flex;
@@ -202,7 +252,7 @@ cursor: pointer;
 .typewriter {
   font-size: 32px;
   font-weight: 600;
-  font-family: "Poppins", sans-serif;
+  font-family: Inter;
   position: relative;
   white-space: nowrap;
   overflow: hidden;
@@ -339,6 +389,10 @@ cursor: pointer;
   .button-flex {
     justify-content: center;
   }
+  .text::after {
+    animation: none !important;
+    content: "Celesta Mamachan"; 
+  }
 }
 @media(max-width:450px){
   .main-img{
@@ -346,5 +400,8 @@ cursor: pointer;
   }
   .content-home{
     padding: 20px;
+  }
+  .img-home{
+    display: none;
   }
 }

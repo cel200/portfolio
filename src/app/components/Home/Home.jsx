@@ -13,21 +13,21 @@ function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const aboutref = useRef();
-   const serviceref = useRef();
-    const projectsref = useRef();
-     const touchref = useRef();
-    
-  function handleAbout (){
-     aboutref.current?.scrollIntoView({ behavior: "smooth" });
+  const serviceref = useRef();
+  const projectsref = useRef();
+  const touchref = useRef();
+
+  function handleAbout() {
+    aboutref.current?.scrollIntoView({ behavior: "smooth" });
   }
-   function handleProject (){
-     projectsref.current?.scrollIntoView({ behavior: "smooth" });
+  function handleProject() {
+    projectsref.current?.scrollIntoView({ behavior: "smooth" });
   }
-   function handleServices (){
-     serviceref.current?.scrollIntoView({ behavior: "smooth" });
+  function handleServices() {
+    serviceref.current?.scrollIntoView({ behavior: "smooth" });
   }
-   function handleContact (){
-     touchref.current?.scrollIntoView({ behavior: "smooth" });
+  function handleContact() {
+    touchref.current?.scrollIntoView({ behavior: "smooth" });
   }
   useEffect(() => {
     const handleScroll = () => {
@@ -63,15 +63,49 @@ function Home() {
             className="hamburger-icon"
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            {menuOpen ? <X size={28} /> : <Menu size={28} />}
+            {menuOpen ? (
+              <X size={28} color="black" />
+            ) : (
+              <Menu size={28} color="black" />
+            )}
+          </div>
+          <div
+            className={`mobile-drawer ${menuOpen ? "open" : ""}`}
+            onClick={() => setMenuOpen(false)} // close drawer on background click
+          >
+            <div
+              className="drawer-content"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <a href="#about" onClick={() => setMenuOpen(false)}>
+                About
+              </a>
+              <a href="#services" onClick={() => setMenuOpen(false)}>
+                Services
+              </a>
+              <a href="#projects" onClick={() => setMenuOpen(false)}>
+                Projects
+              </a>
+              <a href="#contact" onClick={() => setMenuOpen(false)}>
+                Contact
+              </a>
+            </div>
           </div>
 
           {/* Nav Links */}
           <div className="nav-flex ">
-            <div className="nav-text" onClick={handleAbout}>About</div>
-            <div className="nav-text" onClick={handleProject}>Projects</div>
-            <div className="nav-text" onClick={handleServices}>Services</div>
-            <div className="nav-text"onClick={handleContact}>Contact</div>
+            <div className="nav-text" onClick={handleAbout}>
+              About
+            </div>
+            <div className="nav-text" onClick={handleProject}>
+              Projects
+            </div>
+            <div className="nav-text" onClick={handleServices}>
+              Services
+            </div>
+            <div className="nav-text" onClick={handleContact}>
+              Contact
+            </div>
           </div>
 
           {/* Right: Color Mode Toggle */}
@@ -115,23 +149,25 @@ function Home() {
 
           {/* Right Illustration */}
           <div>
-            <Image src="/icon/main.svg" width={400} height={400} alt="main" />
+            <Image src="/icon/main.svg" width={400} height={400} alt="main" className="img-home" />
           </div>
         </div>
       </div>
-      <div ref={aboutref} >
-      <About />
+      <div id="about" ref={aboutref}>
+        <About />
       </div>
-      <div ref={serviceref} >
-      <Services />
+
+      <div id="services" ref={serviceref}>
+        <Services />
       </div>
-      <div ref={projectsref} >
-      <Projects />
+
+      <div id="projects" ref={projectsref}>
+        <Projects />
       </div>
-      <div ref={touchref} >
-        
-      <GetInTouch />
-     </div>
+
+      <div id="contact" ref={touchref}>
+        <GetInTouch />
+      </div>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import { LinearProgress } from "@mui/material";
 import Image from "next/image";
 const About = () => {
   return (
-    <div style={{paddingTop:"70px",paddingBottom:"70px"}}>
+    <div style={{paddingTop:"70px",paddingBottom:"70px",backgroundColor:"white"}}>
       <div className="main-about">
         <div className="main-about-flex">
           <div className="about-flex-1">
