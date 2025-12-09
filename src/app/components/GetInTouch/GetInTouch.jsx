@@ -31,12 +31,12 @@ const GetInTouch = () => {
                 <div>
                   <Image
                     src="/icon/location1.svg"
-                    width={20}
-                    height={20}
+                    width={18}
+                    height={18}
                     alt="mail"
                   />
                 </div>
-                <div>Kollam,Kerala</div>
+                <div className="text-contact">Based on Kollam,Kerala</div>
               </div>
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=celestamamachan@gmail.com&su=Portfolio%20Inquiry&body=Hi%20Celesta,"
@@ -60,7 +60,7 @@ const GetInTouch = () => {
                      
                     />
                   </div>
-                  <div>celestamamachan@gmail.com</div>
+                  <div  className="text-contact">Send an Email</div>
                 </div>
               </a>
               <div
@@ -75,18 +75,18 @@ const GetInTouch = () => {
                 <div>
                   <Image
                     src="/icon/linkedin.svg"
-                    width={15}
-                    height={15}
+                    width={18}
+                    height={18}
                     alt="mail"
                   />
                 </div>
 
-                <div>
+                <div  className="text-contact">
                   <a
                     href="https://www.linkedin.com/in/celesta-mamachan-660873245/"
                     target="_blank"
                   >
-                    LinkedIn
+                  Connect on LinkedIn
                   </a>
                 </div>
               </div>
@@ -99,16 +99,16 @@ const GetInTouch = () => {
                   alignItems: "center",
                 }}
               >
-                <div>
+                <div  className="text-contact">
                   <Image
                     src="/icon/github.svg"
-                    width={20}
-                    height={20}
+                    width={22}
+                    height={22}
                     alt="mail"
                   />
-                </div>
+                </div >
                 <a href="https://github.com/cel200" target="_blank">
-                  GitHub
+                 View my GitHub
                 </a>
               </div>
             </div>

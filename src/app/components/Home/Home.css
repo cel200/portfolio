@@ -404,4 +404,12 @@ cursor: pointer;
   .img-home{
     display: none;
   }
+  .main-bg-home{
+    height: 80vh;
+  }
+  .content-home{
+    display: flex;
+    flex-direction: column;
+    padding-top: 40px;
+  }
 }

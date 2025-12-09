@@ -46,10 +46,11 @@ function Home() {
     <div className="main-home">
       {/* Navbar */}
       <div
-        style={{
-          backgroundImage: "url(/icon/home-banner.jpg)",
-          height: "100vh",
-        }}
+        // style={{
+        //   backgroundImage: "url(/icon/home-banner.jpg)",
+        //   height: "100vh",
+        // }}
+        className="main-bg-home"
       >
         <div className={`navbar-home ${isScrolled ? "navbar-scrolled" : ""}`}>
           {/* Left: Logo / Name */}
@@ -143,7 +144,7 @@ function Home() {
                 Download Resume
               </button>
 
-              <button className="quote-btn">Get a free quote</button>
+              <button className="quote-btn" onClick={handleContact}>Get a free quote</button>
             </div>
           </div>
 
